@@ -1,0 +1,64 @@
+{
+  "name": "openflights-data",
+  "version": "1.0.0-0",
+  "description": "REST microservice for openflights airports and airlines data",
+  "keywords": [
+    "airlines",
+    "airports",
+    "iata",
+    "icao",
+    "microservice",
+    "openflights",
+    "rest"
+  ],
+  "homepage": "https://github.com/commenthol/openflights-data#readme",
+  "bugs": {
+    "url": "https://github.com/commenthol/openflights-data/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/commenthol/openflights-data.git"
+  },
+  "license": "Unlicense",
+  "author": "commenthol <commenthol@gmail.com>",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "all": "npm run clean && npm run lint && npm test",
+    "clean": "rimraf *.tgz",
+    "clean:all": "rimraf node_modules && npm run clean",
+    "postinstall": "node scripts/data.js",
+    "lint": "eslint --cache --fix '**/*.js'",
+    "prepublishOnly": "npm run all",
+    "start": "node test/server.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "@turf/bbox-polygon": "^6.0.1",
+    "@turf/helpers": "^6.1.4",
+    "@turf/within": "^4.7.3",
+    "csv-parser": "^1.12.1",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "i18n-iso-countries": "^3.7.3",
+    "map-lru": "^1.0.2",
+    "turf-helpers": "^3.0.12"
+  },
+  "devDependencies": {
+    "compression": "^1.7.3",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
+  }
+}

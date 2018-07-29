@@ -1,0 +1,9 @@
+node_modules/
+example/
+test/
+docs/
+tmp/
+data/*.dat
+*.log
+*.tgz
+.*

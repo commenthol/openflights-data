@@ -1,0 +1,7 @@
+coverage/
+dist/
+docs*/
+tmp/
+lib/
+node_modules/
+example

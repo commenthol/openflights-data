@@ -1,0 +1,11 @@
+{
+  "extends": ["standard"],
+  "rules": {
+    "no-console": "error"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true
+  }
+}
