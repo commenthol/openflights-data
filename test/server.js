@@ -2,13 +2,13 @@
 const express = require('express')
 const app = express()
 const compress = require('compression')
-const {router} = require('..')
+const { router } = require('..')
 const port = 3003
 
 if (require.main === module) {
   app.use(compress())
   app.use((req, res, next) => {
-    const {method, url} = req
+    const { method, url } = req
     console.log(method, url)
     res.setHeader('Access-Control-Allow-Origin', '*')
     next()

@@ -2,7 +2,7 @@ const selectOpts = (val) => /^(1|true)$/i.test(val)
 const toArray = (str = '') => str.split(',')
 const xor = (a, b) => (a || !b) && (!a || b)
 
-const filter = ({type, country, iata, icao} = {}) => (features) => {
+const filter = ({ type, country, iata, icao } = {}) => (features) => {
   if (!type && !country && !iata && !icao) {
     return features
   }

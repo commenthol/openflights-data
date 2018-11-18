@@ -1,4 +1,4 @@
-import {Store} from 'femto-flux'
+import { Store } from 'femto-flux'
 
 export class MapStore extends Store {
   constructor (dispatcher, { actions }) {

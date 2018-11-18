@@ -1,4 +1,4 @@
-const {featureCollection} = require('@turf/helpers')
+const { featureCollection } = require('@turf/helpers')
 const bbox = require('@turf/bbox-polygon').default
 const within = require('@turf/within')
 

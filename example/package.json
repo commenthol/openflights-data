@@ -5,8 +5,7 @@
   "scripts": {
     "build": "react-scripts build",
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom",
-    "lint": "standard --fix --env browser --parser babel-eslint"
+    "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
     "femto-flux": "^2.0.0",
@@ -15,6 +14,13 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-leaflet": "^2.0.0",
-    "react-scripts": "1.1.4"
-  }
+    "react-scripts": "2.1.1"
+  },
+  "devDependencies": {},
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

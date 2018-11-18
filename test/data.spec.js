@@ -10,7 +10,7 @@ describe('data', function () {
     return airports(`${__dirname}/fixtures/airport.dat`).then(list => {
       log(list)
       assert.ok(Array.isArray(list))
-      assert.deepEqual(list[0], {
+      assert.deepStrictEqual(list[0], {
         alt: 5282,
         city: 'Goroka',
         iata: 'GKA',
@@ -32,7 +32,7 @@ describe('data', function () {
     const features = toGeoJSON(test.list)
     log(features[0])
     assert.ok(Array.isArray(features))
-    assert.deepEqual(features[0], {
+    assert.deepStrictEqual(features[0], {
       type: 'Feature',
       geometry: {
         type: 'Point',
@@ -58,7 +58,7 @@ describe('data', function () {
     const index = indexIata(test.features)
     // console.log(index)
     log(Object.keys(index))
-    assert.deepEqual(Object.keys(index), [ 'GKA', 'POM', 'UAK', 'GOH' ])
+    assert.deepStrictEqual(Object.keys(index), [ 'GKA', 'POM', 'UAK', 'GOH' ])
   })
 
   it('shall index by icao codes', function () {
@@ -66,26 +66,26 @@ describe('data', function () {
     const index = indexIcao(test.features)
     // console.log(index)
     log(Object.keys(index))
-    assert.deepEqual(Object.keys(index), [ 'AYGA', 'AYPY', 'BGBW', 'BGGH', 'ZKSC' ])
+    assert.deepStrictEqual(Object.keys(index), [ 'AYGA', 'AYPY', 'BGBW', 'BGGH', 'ZKSC' ])
   })
 
   it('shall get all airports within bounds', function () {
     assert.ok(test.features, 'needs `features` from previous test')
-    const {features} = test
+    const { features } = test
     const bounds = '61,-45,65,-52'
     const res = insideBounds(bounds, features)
     log('%j', res)
-    assert.equal(res.features.length, 2)
-    assert.deepEqual(res.features.map(f => f.properties.iata), ['UAK', 'GOH'])
+    assert.strictEqual(res.features.length, 2)
+    assert.deepStrictEqual(res.features.map(f => f.properties.iata), ['UAK', 'GOH'])
   })
 
   it('shall not fail on bad bounds', function () {
     assert.ok(test.features, 'needs `features` from previous test')
-    const {features} = test
+    const { features } = test
     const bounds = 'aaaa'
     const res = insideBounds(bounds, features)
     log('%j', res)
-    assert.equal(res.features.length, 0)
+    assert.strictEqual(res.features.length, 0)
   })
 
   it('shall get full data set', function () {

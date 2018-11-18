@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 const https = require('https')
-const {parse} = require('url')
+const { URL } = require('url')
 
 const config = {
   'https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports-extended.dat':
@@ -18,7 +18,7 @@ const download = (url, filename) => {
     if (!err) return
     console.log('downloading %s from %s', filename, url)
 
-    const opts = parse(url)
+    const opts = new URL(url)
     opts.method = 'GET'
 
     https.request(opts, res => {

@@ -1,7 +1,7 @@
 const assert = require('assert')
 const express = require('express')
 const request = require('supertest')
-const {router} = require('..')
+const { router } = require('..')
 
 describe('router', function () {
   const app = express()
@@ -9,7 +9,7 @@ describe('router', function () {
   app.use((err, req, res, next) => {
     // console.log(err)
     res.statusCode = err.status || 500
-    res.json({error: res.statusCode})
+    res.json({ error: res.statusCode })
   })
 
   before(done => {
@@ -107,14 +107,14 @@ describe('router', function () {
         .expect(200)
         .expect('X-Cache', 'MISS')
         .then(res => {
-          const {features} = res.body
+          const { features } = res.body
           const r = features.map(f => {
-            const {coordinates} = f.geometry
-            const {name, country} = f.properties
+            const { coordinates } = f.geometry
+            const { name, country } = f.properties
             return [country, coordinates, name]
           })
           // console.log(r.map(r => JSON.stringify(r)).join(',\n'))
-          assert.deepEqual(r, [
+          assert.deepStrictEqual(r, [
             [
               'DE',
               [7.83249998093, 48.022777557400005],
@@ -199,7 +199,7 @@ describe('router', function () {
         .get('/airports/bbox/48.7,6.5/47,10?type=bus&country=FR,CH')
         .expect(200)
         // .then(res => console.log('%j', res.body))
-        .expect({'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [7.734444, 48.585]}, 'properties': {'id': '9816', 'name': 'Strasbourg Bus Station', 'city': 'Strasbourg', 'country': 'FR', 'iata': 'XER', 'alt': 433, 'tz': 'Europe/Paris', 'type': 'bus'}}]})
+        .expect({ 'type': 'FeatureCollection', 'features': [{ 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [7.734444, 48.585] }, 'properties': { 'id': '9816', 'name': 'Strasbourg Bus Station', 'city': 'Strasbourg', 'country': 'FR', 'iata': 'XER', 'alt': 433, 'tz': 'Europe/Paris', 'type': 'bus' } }] })
     })
   })
 
@@ -254,8 +254,8 @@ describe('router', function () {
       return request(app)
         .get('/airlines/search/albatros')
         .expect(200)
-        .then(({body}) => {
-          assert.deepEqual(body.map(a => a.name), [
+        .then(({ body }) => {
+          assert.deepStrictEqual(body.map(a => a.name), [
             'Aero Albatros',
             'Aero Albatros',
             'Aerotaxis Albatros',

@@ -21,7 +21,7 @@ function loadCsv (filename, headers) {
   const list = []
   return new Promise((resolve) => {
     fs.createReadStream(filename)
-      .pipe(csv({headers}))
+      .pipe(csv({ headers }))
       .on('data', row => {
         row = Object.keys(row).reduce((o, key) => {
           let v = row[key]
@@ -88,7 +88,7 @@ function airports (filename, fnCountries) {
       .filter(airport => (airport.iata || airport.icao))
       .map(airportType)
       .map(airport => {
-        const {country} = airport
+        const { country } = airport
         const code = countryByName[country]
         if (!code) log('ERROR: airports no country code found: %s', country)
         airport.country = code
@@ -111,7 +111,7 @@ const _airPortTypes = [
 ]
 
 function airportType (airport) {
-  const {name, type} = airport
+  const { name, type } = airport
   if (type === 'unknown') delete airport.type
   for (let [type, regex] of _airPortTypes) {
     if (regex.test(name)) {
@@ -125,7 +125,7 @@ function airportType (airport) {
 
 function toGeoJSON (list) {
   return list.map(item => {
-    const {lat, lng, ...properties} = item
+    const { lat, lng, ...properties } = item
     return {
       type: 'Feature',
       geometry: {
