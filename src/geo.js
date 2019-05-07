@@ -1,6 +1,6 @@
 const { featureCollection } = require('@turf/helpers')
 const bbox = require('@turf/bbox-polygon').default
-const within = require('@turf/within')
+const within = require('@turf/points-within-polygon')
 
 const toPolygon = (bounds) => {
   const [lat1, lng1, lat2, lng2] = [].concat(bounds.split(','), 0, 0, 0, 0)
