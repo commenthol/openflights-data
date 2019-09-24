@@ -36,7 +36,7 @@ describe('filterFeatures', function () {
       { properties: { iata: 'iata1', country: 'c1' } },
       { properties: { icoa: 'icoa1', country: 'c1' } },
       { properties: { icoa: 'icoa2', country: 'c1', type: 't1' } },
-      { properties: { country: 'c1' } } ])
+      { properties: { country: 'c1' } }])
   })
   it('should get all features with countries c1,c3', function () {
     const res = filter({ country: 'c1,c3' })(f)

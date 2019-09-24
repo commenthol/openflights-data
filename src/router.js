@@ -44,7 +44,7 @@ function setup (config = {}) {
     code = toUpperCase(code)
     let airline = res.body
     if (!airline) {
-      for (let f of data.airlines) {
+      for (const f of data.airlines) {
         if (f[type] === code) {
           airline = f
           break

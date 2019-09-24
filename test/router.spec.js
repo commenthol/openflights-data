@@ -204,7 +204,7 @@ describe('router', function () {
         .get('/airports/bbox/48.7,6.5/47,10?type=bus&country=FR,CH')
         .expect(200)
         // .then(res => console.log('%j', res.body))
-        .expect({ 'type': 'FeatureCollection', 'features': [{ 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [7.734444, 48.585] }, 'properties': { 'id': '9816', 'name': 'Strasbourg Bus Station', 'city': 'Strasbourg', 'country': 'FR', 'iata': 'XER', 'alt': 433, 'tz': 'Europe/Paris', 'type': 'bus', 'source': 'User' } }] })
+        .expect({ type: 'FeatureCollection', features: [{ type: 'Feature', geometry: { type: 'Point', coordinates: [7.734444, 48.585] }, properties: { id: '9816', name: 'Strasbourg Bus Station', city: 'Strasbourg', country: 'FR', iata: 'XER', alt: 433, tz: 'Europe/Paris', type: 'bus', source: 'User' } }] })
     })
   })
 

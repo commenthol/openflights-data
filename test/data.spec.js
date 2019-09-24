@@ -60,7 +60,7 @@ describe('data', function () {
     const index = indexIata(test.features)
     // console.log(index)
     log(Object.keys(index))
-    assert.deepStrictEqual(Object.keys(index), [ 'GKA', 'POM', 'UAK', 'GOH' ])
+    assert.deepStrictEqual(Object.keys(index), ['GKA', 'POM', 'UAK', 'GOH'])
   })
 
   it('shall index by icao codes', function () {
@@ -68,7 +68,7 @@ describe('data', function () {
     const index = indexIcao(test.features)
     // console.log(index)
     log(Object.keys(index))
-    assert.deepStrictEqual(Object.keys(index), [ 'AYGA', 'AYPY', 'BGBW', 'BGGH', 'ZKSC' ])
+    assert.deepStrictEqual(Object.keys(index), ['AYGA', 'AYPY', 'BGBW', 'BGGH', 'ZKSC'])
   })
 
   it('shall get all airports within bounds', function () {

@@ -25,7 +25,7 @@ function loadCsv (filename, headers) {
       .on('data', row => {
         row = Object.keys(row).reduce((o, key) => {
           let v = row[key]
-          v = (v && v !== '\\N') ? v : void 0
+          v = (v && v !== '\\N') ? v : undefined
           if (v) o[key] = v
           return o
         }, {})
@@ -114,7 +114,7 @@ const _airPortTypes = [
 function airportType (airport) {
   const { name, type } = airport
   if (type === 'unknown') delete airport.type
-  for (let [type, regex] of _airPortTypes) {
+  for (const [type, regex] of _airPortTypes) {
     if (regex.test(name)) {
       airport.type = type
       return airport
