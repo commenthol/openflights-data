@@ -36,7 +36,8 @@ describe('router', function () {
             alt: 10,
             tz: 'Pacific/Tahiti',
             country: 'PF',
-            type: 'airport'
+            type: 'airport',
+            source: 'OurAirports'
           }
         })
     })
@@ -64,7 +65,8 @@ describe('router', function () {
             alt: 47,
             tz: 'Asia/Makassar',
             country: 'ID',
-            type: 'airport'
+            type: 'airport',
+            source: 'OurAirports'
           }
         })
     })
@@ -95,7 +97,8 @@ describe('router', function () {
                 alt: 13,
                 tz: 'Europe/Rome',
                 country: 'IT',
-                type: 'airport'
+                type: 'airport',
+                source: 'OurAirports'
               }
             }
           ]
@@ -134,8 +137,8 @@ describe('router', function () {
             ],
             [
               'FR',
-              [7.778059959411621, 48.55440139770508],
-              'Strasbourg Neuhof Airport'
+              [7.77806, 48.554401],
+              'Strasbourg Neuhof Airfield'
             ],
             ['DE', [7.82772016525, 48.3693008423], 'Lahr Airport'],
             ['FR', [7.734547, 48.585068], 'Gare de Strasbourg'],
@@ -170,7 +173,8 @@ describe('router', function () {
                 alt: 801,
                 tz: 'Europe/Berlin',
                 country: 'DE',
-                type: 'airport'
+                type: 'airport',
+                source: 'OurAirports'
               }
             },
             {
@@ -188,7 +192,8 @@ describe('router', function () {
                 alt: 511,
                 tz: 'Europe/Berlin',
                 country: 'DE',
-                type: 'airport'
+                type: 'airport',
+                source: 'OurAirports'
               }
             }
           ]
@@ -199,7 +204,7 @@ describe('router', function () {
         .get('/airports/bbox/48.7,6.5/47,10?type=bus&country=FR,CH')
         .expect(200)
         // .then(res => console.log('%j', res.body))
-        .expect({ 'type': 'FeatureCollection', 'features': [{ 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [7.734444, 48.585] }, 'properties': { 'id': '9816', 'name': 'Strasbourg Bus Station', 'city': 'Strasbourg', 'country': 'FR', 'iata': 'XER', 'alt': 433, 'tz': 'Europe/Paris', 'type': 'bus' } }] })
+        .expect({ 'type': 'FeatureCollection', 'features': [{ 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [7.734444, 48.585] }, 'properties': { 'id': '9816', 'name': 'Strasbourg Bus Station', 'city': 'Strasbourg', 'country': 'FR', 'iata': 'XER', 'alt': 433, 'tz': 'Europe/Paris', 'type': 'bus', 'source': 'User' } }] })
     })
   })
 

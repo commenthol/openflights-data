@@ -21,7 +21,8 @@ describe('data', function () {
         name: 'Goroka Airport',
         tz: 'Pacific/Port_Moresby',
         country: 'PG',
-        type: 'airport'
+        type: 'airport',
+        source: 'OurAirports'
       })
       Object.assign(test, { list })
     })
@@ -47,7 +48,8 @@ describe('data', function () {
         alt: 5282,
         tz: 'Pacific/Port_Moresby',
         country: 'PG',
-        type: 'airport'
+        type: 'airport',
+        source: 'OurAirports'
       }
     })
     Object.assign(test, { features })
