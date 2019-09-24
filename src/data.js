@@ -80,7 +80,8 @@ function airports (filename, fnCountries) {
     'tzOffset',
     'dst',
     'tz',
-    'type'
+    'type',
+    'extraColumn'
   ]
   return loadCsv(filename, headers)
     // filter out all airports without iata, icoa code
