@@ -1,6 +1,6 @@
 {
   "name": "openflights-data",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "REST microservice for openflights airports and airlines data",
   "keywords": [
     "airlines",
