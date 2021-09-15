@@ -40,27 +40,27 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@turf/bbox-polygon": "^6.0.1",
-    "@turf/helpers": "^6.1.4",
-    "@turf/points-within-polygon": "^5.1.5",
-    "csv-parser": "^2.3.3",
-    "debug": "^4.1.1",
+    "@turf/bbox-polygon": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "@turf/points-within-polygon": "^6.5.0",
+    "csv-parser": "^3.0.0",
+    "debug": "^4.3.2",
     "express": "^4.17.1",
-    "i18n-iso-countries": "^6.0.0",
-    "map-lru": "^1.1.0"
+    "i18n-iso-countries": "^6.8.0",
+    "map-lru": "^2.0.0"
   },
   "devDependencies": {
     "compression": "^1.7.4",
-    "eslint": "^7.2.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.21.2",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^7.2.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "mocha": "^9.1.1",
     "npm-run-all": "^4.1.5",
-    "supertest": "^4.0.2"
+    "supertest": "^6.1.6"
   }
 }

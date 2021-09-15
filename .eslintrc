@@ -1,7 +1,8 @@
 {
   "extends": ["standard"],
   "rules": {
-    "no-console": "error"
+    "no-console": "error",
+    "node/no-path-concat": "warn"
   },
   "env": {
     "browser": true,

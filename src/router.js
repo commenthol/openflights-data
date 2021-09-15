@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const { featureCollection } = require('@turf/helpers')
-const MapLRU = require('map-lru').default
+const MapLRU = require('map-lru')
 
 const { loadData } = require('./data.js')
 const { insideBounds } = require('./geo.js')
